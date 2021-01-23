@@ -27,3 +27,20 @@ server{
    }
   }
 ```
+
+Write to scout.dobbikov.ga for front-end with files:
+```
+server{
+   listen 80;
+   listen [::]:80;
+   server_name scout.dobbikov.ga www.scout.dobbikov.ga;
+
+   root /var/www/scout;
+   location / {
+      try_files $uri $uri/ /index.html;
+   }
+   location /assets/img {
+      root /var/www/scout;
+   }
+}
+```
